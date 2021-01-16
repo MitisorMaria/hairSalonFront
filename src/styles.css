@@ -1,0 +1,103 @@
+/* You can add global styles to this file, and also import other style files */
+p.copyright {
+    font-family:candara;
+    color:rgb(244,244,246);
+}
+
+div.div-background {
+    background-image: url("assets/images/bg2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    width: 100vw;
+    height: 100vh;
+}
+
+p.text-my-content {
+    font-family: candara !important;
+    color:gray !important;
+    font-size:x-large;
+    padding-left:50px;
+    padding-right:500px;
+    word-wrap: break-word;
+}
+
+label.text-my-default {
+    font-family: candara !important;
+    color:gray !important;
+    font-size:x-large;
+}
+
+h6.text-my-default {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    color:gray !important;
+}
+
+a.my-link {
+    color:rgb(244,244,246);
+}
+
+div.my-footer {
+    font-size:large;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    color:rgb(244,244,246);
+}
+
+h1.text-my-default {
+    font-family:candara !important;
+    color:gray !important;
+    padding-top:160px;
+    padding-left:50px;
+}
+
+div.my-carousel {
+    padding-top:50px;
+    padding-left:150px;
+    width:500px;
+}
+
+.carousel .carousel-control-next {
+    opacity: .8;
+    right: 20px;
+    left: 440px;
+    filter: invert(60%);
+  }
+  
+  .carousel .carousel-control-prev {
+    left: 80px;
+    right: 100px;
+    filter: invert(60%);
+  }
+
+.carousel-fade .carousel-item {
+    opacity: 0;
+	transition-duration: .6s;
+	transition-property: opacity;
+}
+
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-left,
+.carousel-fade .carousel-item-prev.carousel-item-right {
+	opacity: 1;
+}
+
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-right {
+	opacity: 0;
+}
+
+.carousel-fade .carousel-item-next,
+.carousel-fade .carousel-item-prev,
+.carousel-fade .carousel-item.active,
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-prev {
+	transform: translateX(0);
+	transform: translate3d(0, 0, 0);
+}
+
+.timepicker-overlay {
+    z-index: 10000000 !important;
+}
+
+.timepicker-backdrop-overlay {
+    z-index: 10000000 !important;
+}

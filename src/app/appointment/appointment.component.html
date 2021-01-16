@@ -1,0 +1,23 @@
+<div class="container">
+  <p class="text-justify text-my-content" style="padding-left:10px;">
+    Make an appointment with us!
+  </p>
+  <p class="text-justify text-my-content" style="padding-left:10px;font-size:large">
+    Choose a day from Monday to Saturday and a time within our business hours, and we'll let you know in an instant if it is available:
+  </p>
+  <form>
+    <label class="text-my-default">Date: </label>
+    <input type="date" class="form-control" style="width:600px;font-family:candara;font-size:large;color:gray;border-style:none;" name="date" ngModel>
+    <br/>
+    <label class="text-my-default">Time: </label>
+    <br/>
+    <input [ngxTimepicker] = "picker" style="width:600px;font-family:candara;color:gray;border-width: thin;border-style:none;" name="time" ngModel>
+    <br/>
+    <ngx-material-timepicker #picker ></ngx-material-timepicker>
+    <br/>
+    <textarea style="width:600px;height:100px;font-family:candara;font-size:large;border-style:none"  class="form-control" placeholder="What do you need the appointment for?" name="message" ngModel></textarea>
+    <br/>
+  <button type="submit" class="btn btn-primary" style="background-color:gray;font-family:candara;" value="submit">Send</button>
+      
+</form>
+</div>
