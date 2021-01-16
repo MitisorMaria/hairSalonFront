@@ -40,6 +40,7 @@ div.my-footer {
     font-size:large;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
     color:rgb(244,244,246);
+    padding-top: 20px;
 }
 
 h1.text-my-default {
