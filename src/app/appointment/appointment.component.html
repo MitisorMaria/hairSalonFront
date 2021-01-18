@@ -6,29 +6,43 @@
     Choose a day from Monday to Saturday and a time within our business hours, and we'll let you know in an instant if it is available:
   </p>
   <form #appointmentForm = "ngForm" (ngSubmit) = "makeAppointment(appointmentForm.value);appointmentForm.reset();">
-    <label class="text-my-default">Date: </label>
-    <input type="date" class="form-control" style="width:600px;font-family:candara;font-size:large;color:gray;border-style:none;" name="date" ngModel>
+    <label class="text-my-default" style="padding-left:10px;font-size:large">Date and time of the appointment: </label>
+    <input type="datetime-local" class="form-control" style="width:600px;font-family:candara;font-size:large;color:gray;border-color: lightgrey;" name="timestamp" ngModel>
     <br/>
-    <label class="text-my-default">Time: </label>
+    <label class="text-my-default" style="padding-left:10px;font-size:large">What do you want to get done? </label>
+    <br>
+    <select class="form-select" aria-label="Default select example" style="font-family:candara;border-color: lightgrey;" name="service" ngModel>
+      <option selected>Select</option>
+      <option value="1">Haircut for men</option>
+      <option value="0">Haircut for women</option>
+      <option value="2">Dye for women</option>
+      <option value="3">Dye for men</option>
+      <option value="5">Style for men</option>
+      <option value="4">Style for women</option>
+    </select>
     <br/>
-    <input [ngxTimepicker] = "picker" style="width:600px;font-family:candara;color:gray;border-width: thin;border-style:none;" name="time" ngModel>
+    <label class="text-my-default" style="padding-left:10px;font-size:large">Enter your name and contact information below, so that we can keep in touch </label>
     <br/>
-    <ngx-material-timepicker #picker ></ngx-material-timepicker>
-    <br/>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Choose what you want to get done
-      </button>
-      <div class="dropdown-menu" style="background-color:gray;font-family:candara;" aria-labelledby="dropdownMenuButton" name="service" ngModel>
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-      </div>
-    </div>
-    <br/>
-    <textarea style="width:600px;height:70px;font-family:candara;font-size:large;border-style:none"  class="form-control" placeholder="Enter your name and contact information so that we can keep in touch" name="message" ngModel></textarea>
+    <textarea style="width:600px;height:70px;font-family:candara;font-size:large;border-color: lightgrey;"  class="form-control" name="message" ngModel></textarea>
     <br/>
   <button type="submit" class="btn btn-primary" style="background-color:gray;font-family:candara;" value="submit">Send</button>
+  <div id="alert" [ngSwitch]="appointmentMade" style="padding-left:300px;padding-right:200px">
+    <!-- the same view can be shown in more than one case -->
+    <div *ngSwitchCase="true" class="alert alert-success" role="alert">Appointment successfully made!</div>
+    <div *ngSwitchCase="false" class="alert alert-danger" role="alert">The date and time chosen are not available. Please select a different date and/or time.</div>
+    <!--default case when there are no matches -->
+    <div *ngSwitchDefault></div>
+  </div>
+
+  <script type="text/javascript"> 
+    setTimeout(function () { 
+
+        // Closing the alert 
+        $('#alert').alert('close'); 
+    }, 5000); 
+</script> 
       
 </form>
 </div>
+
+
