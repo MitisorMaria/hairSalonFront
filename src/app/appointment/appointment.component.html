@@ -5,7 +5,7 @@
   <p class="text-justify text-my-content" style="padding-left:10px;font-size:large">
     Choose a day from Monday to Saturday and a time within our business hours, and we'll let you know in an instant if it is available:
   </p>
-  <form>
+  <form #appointmentForm = "ngForm" (ngSubmit) = "makeAppointment(appointmentForm.value);appointmentForm.reset();">
     <label class="text-my-default">Date: </label>
     <input type="date" class="form-control" style="width:600px;font-family:candara;font-size:large;color:gray;border-style:none;" name="date" ngModel>
     <br/>
@@ -15,7 +15,18 @@
     <br/>
     <ngx-material-timepicker #picker ></ngx-material-timepicker>
     <br/>
-    <textarea style="width:600px;height:100px;font-family:candara;font-size:large;border-style:none"  class="form-control" placeholder="What do you need the appointment for?" name="message" ngModel></textarea>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Choose what you want to get done
+      </button>
+      <div class="dropdown-menu" style="background-color:gray;font-family:candara;" aria-labelledby="dropdownMenuButton" name="service" ngModel>
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+    <br/>
+    <textarea style="width:600px;height:70px;font-family:candara;font-size:large;border-style:none"  class="form-control" placeholder="Enter your name and contact information so that we can keep in touch" name="message" ngModel></textarea>
     <br/>
   <button type="submit" class="btn btn-primary" style="background-color:gray;font-family:candara;" value="submit">Send</button>
       

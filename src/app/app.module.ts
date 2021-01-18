@@ -20,6 +20,8 @@ import { MatInputModule } from '@angular/material/input';
 
 
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { AppointmentService } from './appointment.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,11 +43,12 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
     MatDatepickerModule,
     NgxMatTimepickerModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     NgxMatDatetimePickerModule,
     NgxMaterialTimepickerModule
   ],
-  providers: [],
+  providers: [AppointmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
