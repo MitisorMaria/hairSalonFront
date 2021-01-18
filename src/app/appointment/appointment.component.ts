@@ -15,7 +15,7 @@ export class AppointmentComponent implements OnInit {
   ngOnInit() {
   }
 
-  private appointmentMade;
+  public appointmentMade;
 
   makeAppointment(data) {
     this.appointmentService.makeAppointment(data).subscribe(
