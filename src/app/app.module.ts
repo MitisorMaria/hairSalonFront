@@ -24,6 +24,7 @@ import { AppointmentService } from './appointment.service';
 import { HttpClientModule } from '@angular/common/http';
 import { EmailService } from './email.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReviewsComponent,
     AppointmentComponent,
     ContactComponent,
-    TeamComponent,
+    TeamComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -49,7 +50,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     NgxMatDatetimePickerModule,
     NgxMaterialTimepickerModule,
-    NgbModule
+    NgbModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDVe7M12AbrcPXpDDMqJu_qz--pmgyhSKA'
+    })
   ],
   providers: [AppointmentService,
               EmailService],

@@ -28,6 +28,9 @@
 
       <div class="col-sm-4 my-footer">
         <p><b>FIND US ON THE MAP:</b></p>
+        <agm-map [latitude]="lat" [longitude]="lng">
+          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map>
       </div>
     </div>
       <p class="text-right copyright fixed-bottom">© Maria Mitișor 2021</p>
