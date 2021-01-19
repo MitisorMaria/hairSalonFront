@@ -20,16 +20,19 @@ export class AppointmentComponent implements OnInit {
   makeAppointment(data) {
     this.appointmentService.makeAppointment(data).subscribe(
       val => {
-        alert("val: " + val);
         this.appointmentMade = true;
       },
       response => {
-        alert("resp: " + response.status);
         this.appointmentMade = false;
       },
       () => {
-        alert("completed");
       }
  )
   }
+
+
+  closeAlert() {
+    this.appointmentMade = undefined;
+  }
+
 }

@@ -11,7 +11,6 @@ export class AppointmentService {
   constructor(private http: HttpClient) { }
 
   makeAppointment(data){
-    alert("timestamp: " + data.timestamp + "message: " + data.message + "service: " + data.service);
     return this.http.post(this.apiurl, data);
   }
 }

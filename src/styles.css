@@ -4,12 +4,26 @@ p.copyright {
     color:rgb(244,244,246);
 }
 
+div.card-style {
+    background-color: rgb(244,244,246);
+    font-family: candara !important;
+}
+
 div.div-background {
     background-image: url("assets/images/bg2.jpg");
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
     width: 100vw;
     height: 100vh;
+}
+
+blockquote.text-my-content {
+    font-family: candara !important;
+    color:gray !important;
+    font-size:x-large;
+    padding-left:50px;
+    padding-right:500px;
+    word-wrap: break-word;
 }
 
 p.text-my-content {
@@ -93,12 +107,4 @@ div.my-carousel {
 .carousel-fade .active.carousel-item-prev {
 	transform: translateX(0);
 	transform: translate3d(0, 0, 0);
-}
-
-.timepicker-overlay {
-    z-index: 10000000 !important;
-}
-
-.timepicker-backdrop-overlay {
-    z-index: 10000000 !important;
 }

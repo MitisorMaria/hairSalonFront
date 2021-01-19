@@ -25,24 +25,13 @@
     <br/>
     <textarea style="width:600px;height:70px;font-family:candara;font-size:large;border-color: lightgrey;"  class="form-control" name="message" ngModel></textarea>
     <br/>
-  <button type="submit" class="btn btn-primary" style="background-color:gray;font-family:candara;" value="submit">Send</button>
+  <button type="submit" class="btn btn-primary" style="background-color:gray;font-family:candara;border-style:none" value="submit">Send</button>
   <div id="alert" [ngSwitch]="appointmentMade" style="padding-left:300px;padding-right:200px">
     <!-- the same view can be shown in more than one case -->
-    <div *ngSwitchCase="true" class="alert alert-success" role="alert">Appointment successfully made!</div>
-    <div *ngSwitchCase="false" class="alert alert-danger" role="alert">The date and time chosen are not available. Please select a different date and/or time.</div>
+    <ngb-alert type="success" (closed)="closeAlert()" *ngSwitchCase="true" role="alert">Appointment successfully made!</ngb-alert>
+    <ngb-alert type="danger" (closed)="closeAlert()" *ngSwitchCase="false" role="alert">The date and time chosen are not available. Please select a different date and/or time.</ngb-alert>
     <!--default case when there are no matches -->
     <div *ngSwitchDefault></div>
-  </div>
-
-  <script type="text/javascript"> 
-    setTimeout(function () { 
-
-        // Closing the alert 
-        $('#alert').alert('close'); 
-    }, 5000); 
-</script> 
-      
+  </div>      
 </form>
 </div>
-
-
