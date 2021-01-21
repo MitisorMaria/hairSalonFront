@@ -1,15 +1,16 @@
 <div class="container">
-  <p class="text-justify text-my-content" style="padding-left:10px;">
+  
+  <p class="text-justify text-my-content" style="padding-left:1%">
     Make an appointment with us!
   </p>
-  <p class="text-justify text-my-content" style="padding-left:10px;font-size:large">
+  <p class="text-justify text-my-content" style="padding-left:1%;font-size:large">
     Choose a day from Monday to Saturday and a time within our business hours, and we'll let you know in an instant if it is available:
   </p>
   <form #appointmentForm = "ngForm" (ngSubmit) = "makeAppointment(appointmentForm.value);appointmentForm.reset();">
-    <label class="text-my-default" style="padding-left:10px;font-size:large">Date and time of the appointment: </label>
-    <input type="datetime-local" class="form-control" style="width:600px;font-family:candara;font-size:large;color:gray;border-color: lightgrey;" name="timestamp" ngModel>
+    <label class="text-my-default" style="padding-left:1%;font-size:large">Date and time of the appointment: </label>
+    <input type="datetime-local" class="form-control" style="width:40%;font-family:candara;font-size:large;color:gray;border-color: lightgrey;" name="timestamp" ngModel>
     <br/>
-    <label class="text-my-default" style="padding-left:10px;font-size:large">What do you want to get done? </label>
+    <label class="text-my-default" style="padding-left:1%;font-size:large">What do you want to get done? </label>
     <br>
     <select class="form-select" style="font-family:candara;border-color: lightgrey;" name="service" ngModel>
       <option selected>Select</option>
@@ -21,7 +22,7 @@
       <option value="4">Style for women</option>
     </select>
     <br/>
-    <label class="text-my-default" style="padding-left:10px;font-size:large">Choose a stylist: </label>
+    <label class="text-my-default" style="padding-left:1%;font-size:large">Choose a stylist: </label>
     <br>
     <select class="form-select" style="font-family:candara;border-color: lightgrey;" name="employee" ngModel>
       <option selected>Select</option>
@@ -31,17 +32,25 @@
       <option value="3">Christine Miller</option>
     </select>
     <br/>
-    <label class="text-my-default" style="padding-left:10px;font-size:large">Enter your name and contact information below, so that we can keep in touch </label>
+    <label class="text-my-default" style="padding-left:1%;font-size:large">Enter your name and contact information below, so that we can keep in touch </label>
     <br/>
-    <textarea style="width:600px;height:70px;font-family:candara;font-size:large;border-color: lightgrey;"  class="form-control" name="message" ngModel></textarea>
+    <textarea style="width:40%;height:5%;font-family:candara;font-size:large;border-color: lightgrey;"  class="form-control" name="message" ngModel></textarea>
     <br/>
-  <button type="submit" class="btn btn-primary" style="background-color:gray;font-family:candara;border-style:none" value="submit">Send</button>
-  <div id="alert" [ngSwitch]="appointmentMade" style="padding-left:300px;padding-right:200px">
-    <!-- the same view can be shown in more than one case -->
-    <ngb-alert type="success" (closed)="closeAlert()" *ngSwitchCase="true" role="alert">Appointment successfully made!</ngb-alert>
-    <ngb-alert type="danger" (closed)="closeAlert()" *ngSwitchCase="false" role="alert">The date and time chosen are not available. Please select a different date and/or time.</ngb-alert>
-    <!--default case when there are no matches -->
-    <div *ngSwitchDefault></div>
-  </div>      
+  <div class="row">
+    <div class="col-md-2"><button type="submit" class="btn btn-primary" style="background-color:gray;font-family:candara;border-style:none" value="submit">Send</button></div>
+    <div class="col">
+      <div id="alert" [ngSwitch]="appointmentMade" style="padding-right:10%;">
+        <!-- the same view can be shown in more than one case -->
+        <ngb-alert type="success" (closed)="closeAlert()" *ngSwitchCase="true" role="alert">Appointment successfully made!</ngb-alert>
+        <ngb-alert type="danger" (closed)="closeAlert()" *ngSwitchCase="false" role="alert">The date and time chosen are not available. Please select a different date and/or time.</ngb-alert>
+        <!--default case when there are no matches -->
+        <div *ngSwitchDefault></div>
+      </div>   
+    </div>  
+    
+  </div>
+    
+
+   
 </form>
 </div>
