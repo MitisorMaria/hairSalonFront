@@ -12,9 +12,7 @@ div.card-style {
 div.div-background {
     background-image: url("assets/images/bg2.jpg");
     background-repeat: no-repeat;
-    background-size: 100vw 100vh;
-    width: 100vw;
-    height: 100vh;
+    background-size: 100% 80%;
 }
 
 blockquote.text-my-content {
@@ -66,21 +64,21 @@ h1.text-my-default {
 }
 
 div.my-carousel {
-    padding-top:5%;
+    padding-top:3%;
+    padding-bottom:5%;
     padding-left:15%;
     width:500px;
 }
 
 .carousel .carousel-control-next {
     opacity: .8;
-    right: 30%;
     left: 100%;
+    right:30%;
     filter: invert(60%);
   }
   
   .carousel .carousel-control-prev {
-    left: 5%;
-    right: 10%;
+    left: 15%;
     filter: invert(60%);
   }
 
