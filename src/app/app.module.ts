@@ -52,7 +52,7 @@ import { AgmCoreModule } from '@agm/core';
     NgxMaterialTimepickerModule,
     NgbModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDVe7M12AbrcPXpDDMqJu_qz--pmgyhSKA'
+      apiKey: '#########################'
     })
   ],
   providers: [AppointmentService,
